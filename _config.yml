@@ -1,0 +1,35 @@
+# Site settings
+title: Bug Bounty Journey
+description: Tracking my bug bounty hunting progress and learnings
+baseurl: "/Bug-Bounty-Journey"
+url: "https://heyiamuday.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Collections
+collections:
+  journey:
+    output: true
+    permalink: /journey/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "journey"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
