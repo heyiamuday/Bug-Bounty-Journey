@@ -1,0 +1,23 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "About Me"
+    url: /about/
+  - title: "Impossible List"
+    url: /impossible-list/
+  - title: "Challenge"
+    url: /challenge/
+  - title: "Weekly Reviews"
+    url: /blog/
+  - title: "365 Day Timeline"
+    url: /timeline/
+  - title: "Tags"
+    url: /tags/
+
+# footer links (optional)
+footer:
+  - title: "GitHub"
+    url: "https://github.com/heyiamuday"
+  - title: "Terms &amp; Privacy Policy"
+    url: /terms-privacy/
