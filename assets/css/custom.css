@@ -163,8 +163,8 @@ body.dark,
    =================================== */
 
 .feature__wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 1.5rem;
   margin: 2rem 0;
 }
@@ -472,6 +472,7 @@ a:hover {
 @media (max-width: 767px) {
   .feature__wrapper {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   h1 { font-size: 1.75rem; }
@@ -490,4 +491,63 @@ a:hover {
   .page__meta {
     font-size: 0.8rem;
   }
+}
+
+/* ===================================
+   Fix Archive Layout Conflicts
+   =================================== */
+
+.archive {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  float: none !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+
+@media (min-width: 64em) {
+  .archive {
+    float: none !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (min-width: 80em) {
+  .archive {
+    float: none !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* ===================================
+   Feature Cards Layout
+   =================================== */
+
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 0;
+}
+
+.feature__item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: var(--background-color-secondary);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature__item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--link-color);
 }

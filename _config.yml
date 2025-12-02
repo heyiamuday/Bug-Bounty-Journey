@@ -264,7 +264,3 @@ defaults:
 # Theme Settings (Minimal Mistakes)
 remote_theme: mmistakes/minimal-mistakes@4.26.2
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
-# Atom feed all posts
-feed:
-  posts_limit: 10
