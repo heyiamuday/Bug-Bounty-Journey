@@ -745,61 +745,27 @@ html body > .page,
   }
 }
 
-/* ------------------------------
-   Targeted override: remove archive right gutter at 64em and 80em
-   ------------------------------ */
-/* Highly-specific selectors + !important to override theme/inline rules */
-@media (min-width: 64em) {
-  body .page__inner-wrap .archive,
-  body .page .archive,
-  .page__content .archive,
-  .archive[data-archive],
-  .archive[style] {
-    float: none !important;
-    width: 100% !important;
-    max-width: none !important;
-    padding-right: 0 !important;
-    padding-inline-end: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Ensure inner archive items also don't keep extra right padding */
-  body .page__inner-wrap .archive .archive__item,
-  .page__content .archive .archive__item,
-  .archive__wrapper,
-  .archive__list {
-    padding-right: 0 !important;
-    margin-right: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
-  }
-}
-
+/* Ensure the theme's large-breakpoint archive padding is reduced from 300px → 50px */
 @media (min-width: 80em) {
-  body .page__inner-wrap .archive,
-  body .page .archive,
+  /* target the archive selector and common wrapper variants */
+  .page .archive,
+  .archive,
   .page__content .archive,
-  .archive[data-archive],
-  .archive[style] {
-    float: none !important;
-    width: 100% !important;
+  .page__inner-wrap .archive {
+    /* match original intent but use smaller gutter */
+    width: calc(100% - 50px) !important;
+    padding-right: 50px !important;
+    padding-inline-end: 50px !important;
     max-width: none !important;
-    padding-right: 0 !important;
-    padding-inline-end: 0 !important;
-    margin-right: 0 !important;
     box-sizing: border-box !important;
   }
 
-  body .page__inner-wrap .archive .archive__item,
-  .page__content .archive .archive__item,
+  /* ensure inner lists/items do not keep the old right spacing */
+  .archive .archive__item,
   .archive__wrapper,
   .archive__list {
     padding-right: 0 !important;
     margin-right: 0 !important;
     width: 100% !important;
-    max-width: none !important;
   }
 }
-
-/* End override */
