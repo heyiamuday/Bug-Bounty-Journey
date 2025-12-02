@@ -1,32 +1,32 @@
 # main links
 main:
   - title: "Home"
-    url: /Bug-Bounty-Journey/
+    url: /
   - title: "Timeline"
-    url: /Bug-Bounty-Journey/timeline/
+    url: /timeline/
   - title: "Reviews"
-    url: /Bug-Bounty-Journey/reviews/
+    url: /reviews/
   - title: "Quarters"
     url: "#"
     children:
       - title: "Q1: Foundations"
-        url: /Bug-Bounty-Journey/q1/
+        url: /q1/
       - title: "Q2: Advanced"
-        url: /Bug-Bounty-Journey/q2/
+        url: /q2/
       - title: "Q3: Mastery"
-        url: /Bug-Bounty-Journey/q3/
+        url: /q3/
       - title: "Q4: Legacy"
-        url: /Bug-Bounty-Journey/q4/
+        url: /q4/
   - title: "Challenge"
-    url: /Bug-Bounty-Journey/challenge/
+    url: /challenge/
   - title: "Tags"
-    url: /Bug-Bounty-Journey/tags/
+    url: /tags/
   - title: "About"
-    url: /Bug-Bounty-Journey/about/
+    url: /about/
 
 # footer links (optional)
 footer:
   - title: "GitHub"
     url: "https://github.com/heyiamuday"
   - title: "Terms &amp; Privacy Policy"
-    url: /Bug-Bounty-Journey/terms-privacy/
+    url: /terms-privacy/
