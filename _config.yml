@@ -1,8 +1,8 @@
 # Site Settings
 locale                   : "en-US"
-title                    : "365-Day Bug Bounty Challenge"
+title                    : "My 2026 Bug Bounty Challenge"
 title_separator          : "|"
-subtitle                 : "Tracking my journey from day 1 to day 365"
+subtitle                 : "12 Week x 4 Quarters Challenge - Tracking my journey"
 name                     : "Uday"
 description              : "A comprehensive chronicle of my 365-day bug bounty challenge, featuring daily logs and weekly insights."
 url                      : "https://heyiamuday.github.io/Bug-Bounty-Journey/"
@@ -13,6 +13,14 @@ logo                     : # path of logo image to display in the masthead, e.g.
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
+
+# Custom Head Includes
+head_scripts:
+  - https://code.jquery.com/jquery-3.6.0.min.js
+
+# Custom CSS
+custom_css               : /assets/css/custom.css
+
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "utterances", "giscus"
   disqus:
@@ -255,7 +263,7 @@ defaults:
 
 # Theme Settings (Minimal Mistakes)
 remote_theme: mmistakes/minimal-mistakes@4.26.2
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Atom feed all posts
 feed:

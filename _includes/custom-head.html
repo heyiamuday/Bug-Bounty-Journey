@@ -1,0 +1,28 @@
+<!-- Custom CSS for responsive design and dark mode -->
+<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<!-- Dark mode support -->
+<script>
+  // Check for dark mode preference
+  if (localStorage.getItem('dark-mode') === 'enabled' || 
+      (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+  
+  // Dark mode toggle functionality
+  function toggleDarkMode() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      localStorage.setItem('dark-mode', 'disabled');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      localStorage.setItem('dark-mode', 'enabled');
+    }
+  }
+  
+  // Make toggleDarkMode available globally
+  window.toggleDarkMode = toggleDarkMode;
+</script>

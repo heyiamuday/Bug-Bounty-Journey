@@ -5,23 +5,24 @@ header:
   image: # "/assets/images/home-header.jpg"
   overlay_color: "#000"
   overlay_filter: "0.5"
-  caption: "Welcome to the 365-Day Bug Bounty Challenge"
-excerpt: "Documenting my journey from Day 1 to Day 365 | Security Research | Bug Bounties | Daily Logs & Weekly Reviews"
+  caption: "Welcome to My 2026 Bug Bounty Challenge"
+excerpt: "12 Week x 4 Quarters Challenge | Security Research | Bug Bounties | Daily Logs & Weekly Reviews"
 ---
 
-# Welcome to My 365-Day Bug Bounty Challenge! 🎯
+# Welcome to My 2026 Bug Bounty Challenge! 🎯
 
-I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering vulnerabilities, learning advanced security techniques, and building expertise in bug bounty hunting.
+I'm documenting my comprehensive journey through **4 quarters of 12-week challenges** (reverse counting from Week 12 to Week 1), discovering vulnerabilities, learning advanced security techniques, and building expertise in bug bounty hunting.
 
-## 📊 Challenge Progress
+## 📊 Challenge Structure
 
-| Metric | Target | Current |
-|--------|--------|---------|
-| **Days Completed** | 365 | Ongoing |
-| **Vulnerabilities** | 100+ | Tracking |
-| **Time Committed** | 1,460+ hours | Tracking |
-| **Weekly Reviews** | 52 | Ongoing |
-| **Documentation** | 417 posts | Building |
+| Metric | Value |
+|--------|-------|
+| **Challenge Type** | 12 Week x 4 Quarters |
+| **Duration** | 48 weeks (approx 1 year) |
+| **Current** | Quarter 1, Week 12, Day 2 |
+| **Total Weeks** | 48 weeks |
+| **Weekly Reviews** | 48 |
+| **Documentation** | Daily Logs + Weekly Analysis |
 
 ---
 
@@ -35,9 +36,9 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
       <i class="fas fa-calendar-alt"></i>
     </div>
     <div class="archive__item-body">
-      <h3 class="archive__item-title">Daily Logs (365 Days)</h3>
+      <h3 class="archive__item-title">Daily Logs</h3>
       <p class="archive__item-excerpt">Short-form daily entries tracking my progress, findings, and learnings.</p>
-      <p><a href="/timeline/" class="btn btn--primary">View Timeline</a></p>
+      <p><a href="/Bug-Bounty-Journey/timeline/" class="btn btn--primary">View Timeline</a></p>
     </div>
   </div>
 
@@ -46,9 +47,9 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
       <i class="fas fa-newspaper"></i>
     </div>
     <div class="archive__item-body">
-      <h3 class="archive__item-title">Weekly Reviews (52 Posts)</h3>
+      <h3 class="archive__item-title">Weekly Reviews</h3>
       <p class="archive__item-excerpt">Comprehensive long-form analysis of each week's achievements and learnings.</p>
-      <p><a href="/blog/" class="btn btn--primary">Read Reviews</a></p>
+      <p><a href="/Bug-Bounty-Journey/blog/" class="btn btn--primary">Read Reviews</a></p>
     </div>
   </div>
 
@@ -58,8 +59,8 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
     </div>
     <div class="archive__item-body">
       <h3 class="archive__item-title">About Me</h3>
-      <p class="archive__item-excerpt">Learn about my background and what drives this 365-day challenge.</p>
-      <p><a href="/about/" class="btn btn--primary">Learn More</a></p>
+      <p class="archive__item-excerpt">Learn about my background and what drives this challenge.</p>
+      <p><a href="/Bug-Bounty-Journey/about/" class="btn btn--primary">Learn More</a></p>
     </div>
   </div>
 
@@ -70,7 +71,7 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
     <div class="archive__item-body">
       <h3 class="archive__item-title">Impossible List</h3>
       <p class="archive__item-excerpt">My ambitious goals and dreams for this challenge and beyond.</p>
-      <p><a href="/impossible-list/" class="btn btn--primary">View Goals</a></p>
+      <p><a href="/Bug-Bounty-Journey/impossible-list/" class="btn btn--primary">View Goals</a></p>
     </div>
   </div>
 
@@ -81,7 +82,7 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
     <div class="archive__item-body">
       <h3 class="archive__item-title">Challenge Overview</h3>
       <p class="archive__item-excerpt">Understand the challenge structure, goals, and my daily workflow.</p>
-      <p><a href="/challenge/" class="btn btn--primary">Explore</a></p>
+      <p><a href="/Bug-Bounty-Journey/challenge/" class="btn btn--primary">Explore</a></p>
     </div>
   </div>
 
@@ -92,7 +93,7 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
     <div class="archive__item-body">
       <h3 class="archive__item-title">Browse by Topic</h3>
       <p class="archive__item-excerpt">Filter daily logs and reviews by security topic or theme.</p>
-      <p><a href="/tags/" class="btn btn--primary">View Tags</a></p>
+      <p><a href="/Bug-Bounty-Journey/tags/" class="btn btn--primary">View Tags</a></p>
     </div>
   </div>
 </div>
@@ -115,7 +116,7 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
     {% if log.tags %}
       <span class="page__meta-sep">|</span>
       {% for tag in log.tags limit: 3 %}
-        <a href="/tags/#{{ tag | slugify }}" class="page__meta-tag">{{ tag }}</a>
+        <a href="/Bug-Bounty-Journey/tags/#{{ tag | slugify }}" class="page__meta-tag">{{ tag }}</a>
         {% if forloop.last == false %} {% endif %}
       {% endfor %}
     {% endif %}
@@ -150,7 +151,7 @@ I'm documenting my comprehensive journey from **Day 1 to Day 365**, discovering 
 
 ## 🎯 What's This All About?
 
-I'm undertaking a **365-day challenge** to:
+I'm undertaking a **12-week quarterly challenge** to:
 
 ✅ **Master Bug Bounty Hunting** - Develop world-class vulnerability discovery skills  
 ✅ **Build Consistency** - Prove that daily effort compounds into excellence  
@@ -186,16 +187,16 @@ Stay updated with my journey:
 
 **New here?** Start with one of these:
 
-1. **First Time**: [Read the Challenge Overview](/challenge/)
-2. **Curious About Me**: [Check out the About page](/about/)
-3. **Ready to Dive In**: [View the 365-Day Timeline](/timeline/)
-4. **Want Analysis**: [Read the Latest Weekly Review](/blog/)
+1. **First Time**: [Read the Challenge Overview](/Bug-Bounty-Journey/challenge/)
+2. **Curious About Me**: [Check out the About page](/Bug-Bounty-Journey/about/)
+3. **Ready to Dive In**: [View the Timeline](/Bug-Bounty-Journey/timeline/)
+4. **Want Analysis**: [Read the Latest Weekly Review](/Bug-Bounty-Journey/blog/)
 
 ---
 
-**Ready to follow the journey?** [Explore the timeline →](/timeline/)
+**Ready to follow the journey?** [Explore the timeline →](/Bug-Bounty-Journey/timeline/)
 
-*Thank you for visiting my 365-day challenge site. Let's discover what's possible when we commit to daily progress! 🎯*
+*Thank you for visiting my 2026 Bug Bounty Challenge site. Let's discover what's possible when we commit to daily progress! 🎯*
 
 ---
 

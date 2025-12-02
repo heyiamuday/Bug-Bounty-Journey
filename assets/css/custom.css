@@ -1,0 +1,483 @@
+/* ===================================
+   Custom Responsive Design Fixes
+   =================================== */
+
+:root {
+  --sidebar-width: 300px;
+  --content-max-width: 900px;
+}
+
+/* ===================================
+   Desktop Layout Improvements
+   =================================== */
+
+@media (min-width: 768px) {
+  /* Force proper desktop layout */
+  .page {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+
+  .page__inner-wrap {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 2rem;
+  }
+
+  /* Sidebar positioning */
+  .sidebar {
+    position: sticky;
+    top: 4rem;
+    order: 2;
+  }
+
+  /* Main content wider on desktop */
+  .page__content {
+    max-width: 100%;
+  }
+
+  /* Feature wrapper - ensure grid layout on desktop */
+  .feature__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  /* Improve masthead spacing */
+  .masthead {
+    padding: 2rem 0;
+  }
+
+  .greedy-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Navigation items spacing */
+  .greedy-nav a {
+    margin: 0 0.5rem;
+  }
+
+  /* Better footer spacing */
+  .page__footer {
+    margin-top: 4rem;
+  }
+
+  /* Archive items - better desktop display */
+  .archive__item {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Posts and pages better sizing */
+  .posts-list {
+    max-width: 100%;
+  }
+}
+
+/* ===================================
+   Mobile Layout Fixes
+   =================================== */
+
+@media (max-width: 767px) {
+  /* Stack layout on mobile */
+  .page__inner-wrap {
+    display: block;
+  }
+
+  .sidebar {
+    margin-bottom: 3rem;
+  }
+
+  /* Ensure full width on mobile */
+  .page__content {
+    width: 100%;
+  }
+
+  /* Single column feature wrapper */
+  .feature__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Reduce spacing on mobile */
+  .page__meta {
+    font-size: 0.75rem;
+  }
+
+  /* Smaller buttons on mobile */
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Better nav on mobile */
+  .greedy-nav {
+    padding: 0.5rem 0;
+  }
+}
+
+/* ===================================
+   Dark Mode Support
+   =================================== */
+
+/* Ensure dark mode colors are applied */
+html[data-theme='dark'],
+body.dark,
+.dark-mode-enabled {
+  --background-color: #1e1e1e;
+  --background-color-secondary: #2d2d2d;
+  --text-color: #e0e0e0;
+  --text-color-secondary: #b0b0b0;
+  --link-color: #64b5f6;
+  --border-color: #3d3d3d;
+}
+
+/* Dark mode specific improvements */
+.dark .page__content,
+[data-theme='dark'] .page__content {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.dark .feature__item,
+[data-theme='dark'] .feature__item {
+  background-color: var(--background-color-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.dark .btn--primary,
+[data-theme='dark'] .btn--primary {
+  background-color: #1976d2;
+}
+
+.dark .btn--primary:hover,
+[data-theme='dark'] .btn--primary:hover {
+  background-color: #1565c0;
+}
+
+/* ===================================
+   Feature Cards Improvements
+   =================================== */
+
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature__item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: var(--background-color-secondary);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature__item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--link-color);
+}
+
+.archive__item-teaser {
+  font-size: 2.5rem;
+  color: var(--link-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.archive__item-body h3 {
+  margin: 0.75rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.archive__item-body p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  color: var(--text-color-secondary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  align-self: flex-start;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1565c0;
+  transform: translateX(2px);
+}
+
+.btn--primary {
+  background-color: #1976d2;
+}
+
+.btn--primary:hover {
+  background-color: #1565c0;
+}
+
+/* ===================================
+   Archive and Timeline Improvements
+   =================================== */
+
+.archive__item {
+  padding: 1.25rem 0;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.archive__item:last-child {
+  border-bottom: none;
+}
+
+.archive__item:hover {
+  padding-left: 0.5rem;
+}
+
+.archive__item-title {
+  margin: 0.5rem 0 0.75rem 0;
+  font-size: 1.25rem;
+}
+
+.archive__item-title a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.archive__item-title a:hover {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+.archive__item-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+  margin-top: 0.5rem;
+}
+
+/* ===================================
+   Page Meta Styling
+   =================================== */
+
+.page__meta {
+  font-size: 0.875rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.page__meta-sep {
+  margin: 0 0.25rem;
+  opacity: 0.5;
+}
+
+.page__meta-tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background-color: var(--background-color-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: var(--link-color);
+  transition: all 0.2s ease;
+}
+
+.page__meta-tag:hover {
+  background-color: var(--link-color);
+  color: white;
+  border-color: var(--link-color);
+}
+
+/* ===================================
+   Tag Navigation
+   =================================== */
+
+.tag-link {
+  text-decoration: none;
+  color: var(--link-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+}
+
+.tag-link:hover {
+  background-color: var(--link-color);
+  color: white;
+  transform: scale(1.1);
+  border-color: var(--link-color);
+}
+
+/* ===================================
+   Masthead & Navigation
+   =================================== */
+
+.masthead {
+  background-color: var(--background-color-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.masthead__menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.greedy-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.greedy-nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+  border-radius: 0.25rem;
+}
+
+.greedy-nav a:hover {
+  background-color: var(--background-color);
+  color: var(--link-color);
+}
+
+/* ===================================
+   Pagination
+   =================================== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.pagination__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--background-color-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: var(--link-color);
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.pagination__item:hover {
+  background-color: var(--link-color);
+  color: white;
+  border-color: var(--link-color);
+}
+
+/* ===================================
+   Tables
+   =================================== */
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  background-color: var(--background-color-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+table thead {
+  background-color: var(--link-color);
+  color: white;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table tbody tr:hover {
+  background-color: var(--background-color);
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===================================
+   General Typography Improvements
+   =================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   Responsive Typography
+   =================================== */
+
+@media (max-width: 767px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.1rem; }
+
+  .archive__item-title {
+    font-size: 1.1rem;
+  }
+
+  .archive__item-teaser {
+    font-size: 2rem;
+  }
+
+  .page__meta {
+    font-size: 0.8rem;
+  }
+}

@@ -1,23 +1,23 @@
 # main links
 main:
   - title: "Home"
-    url: /
+    url: /Bug-Bounty-Journey/
   - title: "About Me"
-    url: /about/
+    url: /Bug-Bounty-Journey/about/
   - title: "Impossible List"
-    url: /impossible-list/
+    url: /Bug-Bounty-Journey/impossible-list/
   - title: "Challenge"
-    url: /challenge/
+    url: /Bug-Bounty-Journey/challenge/
   - title: "Weekly Reviews"
-    url: /blog/
-  - title: "365 Day Timeline"
-    url: /timeline/
+    url: /Bug-Bounty-Journey/blog/
+  - title: "Timeline"
+    url: /Bug-Bounty-Journey/timeline/
   - title: "Tags"
-    url: /tags/
+    url: /Bug-Bounty-Journey/tags/
 
 # footer links (optional)
 footer:
   - title: "GitHub"
     url: "https://github.com/heyiamuday"
   - title: "Terms &amp; Privacy Policy"
-    url: /terms-privacy/
+    url: /Bug-Bounty-Journey/terms-privacy/

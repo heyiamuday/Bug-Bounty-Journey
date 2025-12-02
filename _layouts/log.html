@@ -34,7 +34,7 @@ layout: single
             <span class="page__meta-sep">|</span>
             <i class="fas fa-tags"></i>
             {% for tag in page.tags %}
-              <a href="/tags/#{{ tag | slugify }}" class="page__meta-tag">{{ tag }}</a>
+              <a href="/Bug-Bounty-Journey/tags/#{{ tag | slugify }}" class="page__meta-tag">{{ tag }}</a>
               {% if forloop.last == false %}, {% endif %}
             {% endfor %}
           {% endif %}

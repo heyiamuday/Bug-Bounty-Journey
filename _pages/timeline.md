@@ -1,13 +1,13 @@
 ---
 layout: archive
-title: "365-Day Timeline"
+title: "Challenge Timeline"
 permalink: /timeline/
 author_profile: true
 ---
 
 <h2>Daily Challenge Logs</h2>
 
-<p>Below is the complete chronological timeline of my 365-day challenge. Click on any date or title to read the full log entry.</p>
+<p>Below is the complete chronological timeline of my challenge. Click on any date or title to read the full log entry.</p>
 
 <!-- Timeline Container -->
 <div class="timeline">
@@ -32,7 +32,7 @@ author_profile: true
               {% if log.tags %}
                 <span class="page__meta-sep">|</span>
                 {% for tag in log.tags %}
-                  <a href="/tags/#{{ tag | slugify }}" class="page__meta">{{ tag }}</a>
+                  <a href="/Bug-Bounty-Journey/tags/#{{ tag | slugify }}" class="page__meta-tag">{{ tag }}</a>
                   {% if forloop.last == false %}, {% endif %}
                 {% endfor %}
               {% endif %}

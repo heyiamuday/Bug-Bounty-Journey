@@ -1,47 +1,51 @@
 ---
 layout: single
-title: "365-Day Bug Bounty Challenge"
+title: "12 Week x 4 Quarters Challenge"
 permalink: /challenge/
 author_profile: true
 header:
   image: # "/assets/images/challenge-header.jpg"
-  caption: # "365-Day Challenge"
+  caption: # "12 Week Challenge"
 ---
 
-## 365-Day Bug Bounty Challenge 🚀
+## My 2026 Bug Bounty Challenge 🚀
 
-Welcome to my **365-Day Bug Bounty Challenge**! This is a comprehensive, transparently documented journey from Day 1 to Day 365, where I commit to discovering vulnerabilities, learning new security techniques, and building expertise in bug bounty hunting.
-
----
-
-## What Is This Challenge?
-
-A **365-day challenge** is a commitment to consistent daily effort toward a meaningful goal. Over the next year, I will:
-
-✅ **Spend 4+ hours daily** on bug bounty hunting and security research  
-✅ **Document every day** with detailed daily logs  
-✅ **Analyze weekly** with comprehensive reviews  
-✅ **Share transparently** so others can learn from my journey  
-✅ **Discover vulnerabilities** and report them responsibly  
-✅ **Build expertise** through consistent, deliberate practice  
-
----
-
-## Why I Started This
-
-The bug bounty space is competitive and constantly evolving. By committing to this challenge, I aim to:
-
-1. **Master the craft** - Develop world-class bug bounty hunting skills
-2. **Build consistency** - Prove that daily progress compounds into expertise
-3. **Help others** - Document the journey so aspiring researchers can learn
-4. **Create impact** - Discover and disclose vulnerabilities that matter
-5. **Community contribution** - Share methodologies and findings openly
+Welcome to my **12 Week x 4 Quarters Challenge**! This is a comprehensive, transparently documented journey through 4 quarters of 12-week challenges, where each quarter runs in reverse (Week 12 → Week 1), discovering vulnerabilities, learning new security techniques, and building expertise in bug bounty hunting.
 
 ---
 
 ## Challenge Structure
 
-### Daily Logs (365 Entries)
+### Overview
+- **Total Duration**: Approximately 1 year (4 quarters)
+- **Per Quarter**: 12 weeks (reverse counting)
+- **Current**: Quarter 1, Week 12, Day 2
+- **Format**: 4 independent 12-week challenge cycles
+
+### Quarterly Breakdown
+1. **Q1**: Week 12 → Week 1 (Q1 2026)
+2. **Q2**: Week 12 → Week 1 (Q2 2026)
+3. **Q3**: Week 12 → Week 1 (Q3 2026)
+4. **Q4**: Week 12 → Week 1 (Q4 2026)
+
+---
+
+## Why This Structure?
+
+A **12-week quarterly challenge** allows for:
+
+✅ **Focused Intensity** - Deep work periods with defined endpoints  
+✅ **Reflection & Adjustment** - Evaluate and pivot at quarter boundaries  
+✅ **Consistency** - Maintain 4+ hours daily commitment without burnout  
+✅ **Documentation** - Daily logs capture progress and learning  
+✅ **Analysis** - Weekly reviews provide comprehensive insights  
+✅ **Sustainable** - Better balance than a single 365-day push  
+
+---
+
+## Daily Logs & Weekly Reviews
+
+### Daily Logs (12 logs per week × 4 quarters = ~48 weeks)
 Short-form daily entries documenting:
 - Vulnerabilities discovered
 - Techniques tested
@@ -49,9 +53,9 @@ Short-form daily entries documenting:
 - Lessons learned
 - Time spent and activities
 
-**View all daily logs**: [365-Day Timeline](/timeline/)
+**View all daily logs**: [Challenge Timeline](/Bug-Bounty-Journey/timeline/)
 
-### Weekly Reviews (52 Entries)
+### Weekly Reviews (1 per week × 4 quarters = ~48 weeks)
 Comprehensive long-form blog posts analyzing:
 - Weekly statistics and findings
 - Day-by-day breakdowns
@@ -59,27 +63,21 @@ Comprehensive long-form blog posts analyzing:
 - Tactical adjustments for next week
 - Resources and references used
 
-**View all weekly reviews**: [Blog Archive](/blog/)
-
-### Static Pages
-Essential reference pages:
-- **[About Me](/about/)** - Who I am and my background
-- **[Impossible List](/impossible-list/)** - My ambitious goals
-- **[Challenge](/challenge/)** - This page, the challenge overview
+**View all weekly reviews**: [Blog Archive](/Bug-Bounty-Journey/blog/)
 
 ---
 
 ## Key Statistics
 
-| Metric | Goal | Status |
+| Metric | Plan | Status |
 |--------|------|--------|
-| **Days Completed** | 365 | 1/365 |
-| **Vulnerabilities Found** | 100+ | Tracking |
+| **Total Weeks** | 48 | 1/48 |
+| **Total Days** | ~336 | 2 (Q1W12) |
+| **Vulnerabilities Target** | 100+ | Tracking |
 | **Critical Issues** | 5+ | Tracking |
-| **Hours Spent** | 1,460+ | Tracking |
-| **Weekly Reviews** | 52 | 0/52 |
-| **Tools Learned** | 15+ | Tracking |
-| **Hall of Fames** | 5+ | Tracking |
+| **Hours Target** | 1,300+ | Tracking |
+| **Weekly Reviews** | 48 | 0/48 |
+| **Quarter Cycles** | 4 | 1/4 |
 
 ---
 
@@ -87,11 +85,12 @@ Essential reference pages:
 
 Each daily log is tagged for easy filtering and discovery:
 
-### Day Tags
-- `#day-001` through `#day-365`
+### Week Tags (Within Quarter)
+- `#q1-w12`, `#q1-w11` ... `#q1-w01` (Quarter 1)
+- `#q2-w12`, `#q2-w11` ... `#q2-w01` (Quarter 2)
+- etc.
 
 ### Theme Tags (Examples)
-- `#challenge-kickoff` - Challenge launch
 - `#reconnaissance` - Recon work
 - `#web-app-security` - Web application testing
 - `#api-security` - API security testing
@@ -102,7 +101,7 @@ Each daily log is tagged for easy filtering and discovery:
 - `#tool-evaluation` - Testing and comparing tools
 - `#incident-analysis` - Post-mortem analysis
 
-**Filter by topic**: [View all tags](/tags/)
+**Filter by topic**: [View all tags](/Bug-Bounty-Journey/tags/)
 
 ---
 
@@ -151,18 +150,18 @@ Every Sunday evening, I publish a comprehensive weekly review including:
 ## How to Follow Along
 
 ### Option 1: Daily Updates
-Follow the [365-Day Timeline](/timeline/) to see daily progress. New logs published every evening around 9 PM.
+Follow the [Challenge Timeline](/Bug-Bounty-Journey/timeline/) to see daily progress. New logs published every evening.
 
 ### Option 2: Weekly Deep Dives
-Subscribe to or visit the [Blog Archive](/blog/) for comprehensive weekly analysis every Sunday.
+Subscribe to or visit the [Blog Archive](/Bug-Bounty-Journey/blog/) for comprehensive weekly analysis every Sunday.
 
 ### Option 3: GitHub Repository
 Clone or watch the [GitHub repository](https://github.com/heyiamuday/Bug-Bounty-Journey) for all source files and updates.
 
 ### Option 4: Connect with Me
 Stay connected for insights and updates:
-- **Twitter**: [@YourHandle](https://twitter.com/yourhandle)
 - **GitHub**: [heyiamuday](https://github.com/heyiamuday)
+- **Twitter**: [@YourHandle](https://twitter.com/yourhandle)
 - **Email**: your-email@example.com
 
 ---
@@ -171,75 +170,74 @@ Stay connected for insights and updates:
 
 I commit to:
 
-✓ **Consistency** - Complete 365 days without missing a single day  
+✓ **Consistency** - Complete all 4 quarters and ~336 days without missing  
 ✓ **Quality** - Provide detailed, thoughtful logs and reviews  
 ✓ **Transparency** - Share both successes and struggles  
 ✓ **Ethics** - Report all findings responsibly and ethically  
 ✓ **Community** - Help others learn from my journey  
-✓ **Growth** - Continuously improve my skills and methodologies  
+✓ **Growth** - Continuously improve skills and methodologies  
 
 ---
 
-## Challenges & Constraints
+## Quarter Transition
 
-This is a realistic challenge, which means:
-
-- 🏢 I maintain my full-time job (4 hours of challenge work daily)
-- 🎯 Quality over quantity - Focus on impactful findings, not just numbers
-- 📚 Documented learning - Every day includes reflection and documentation
-- 🤝 Ethical standards - All findings reported responsibly
-- 💪 Sustainable pace - Avoiding burnout through consistent routines
+At the end of each quarter, I will:
+1. Publish a comprehensive Q-review
+2. Analyze metrics and learnings
+3. Plan next quarter strategy
+4. Take a brief 2-3 day refresh
+5. Start new quarter countdown (Week 12)
 
 ---
 
 ## Expected Outcomes
 
-By the end of this 365-day challenge, I expect to:
+By the end of this 12-week x 4 quarterly challenge, I expect to:
 
-1. **Skill Development**: Master advanced bug bounty techniques
-2. **Portfolio Building**: Create a comprehensive body of work to showcase
-3. **Community Recognition**: Build credibility and relationships in the industry
-4. **Financial Success**: Generate meaningful income from bug bounties
-5. **Knowledge Sharing**: Create valuable content that helps others succeed
+1. **Skill Mastery**: Advanced bug bounty techniques and domain expertise
+2. **Portfolio Excellence**: Comprehensive body of work to showcase
+3. **Industry Recognition**: Build credibility and relationships
+4. **Financial Success**: Meaningful income generation
+5. **Knowledge Sharing**: Create content that helps the community
 
 ---
 
 ## Get Involved
 
 ### Subscribe for Updates
-Get weekly reviews and daily summaries delivered to you.
+Get weekly reviews and daily summaries.
 
 ### Share Your Thoughts
-Comment on daily logs and weekly reviews with feedback, questions, or insights.
+Comment on daily logs and weekly reviews.
 
 ### Collaborate
-Interested in security research? Let's collaborate on mutual projects.
+Interested in security research? Let's work together.
 
 ### Support the Journey
 - ⭐ Star the GitHub repository
-- 💬 Share this challenge with others
-- 📧 Send encouragement and feedback
+- 💬 Share this challenge
+- 📧 Send feedback
 
 ---
 
 ## Quick Links
 
-- **[Start Here: Day 1 Log](/log/2025-12-02-day-001.html)** - Read my first log entry
-- **[Latest: Week 1 Review](/blog/week-01-review/)** - Check the latest weekly analysis
-- **[Full Timeline](/timeline/)** - Browse all daily logs
-- **[About Me](/about/)** - Learn more about who I am
-- **[Impossible List](/impossible-list/)** - See my ambitious goals
+- **[Latest Daily Log](/Bug-Bounty-Journey/timeline/)** - Read the most recent entry
+- **[Weekly Reviews](/Bug-Bounty-Journey/blog/)** - Check weekly analysis
+- **[Full Timeline](/Bug-Bounty-Journey/timeline/)** - Browse all daily logs
+- **[About Me](/Bug-Bounty-Journey/about/)** - Learn my background
+- **[Impossible List](/Bug-Bounty-Journey/impossible-list/)** - See my goals
 
 ---
 
-**Ready to dive in?** Start with the [365-Day Timeline](/timeline/) or jump to the latest [Weekly Review](/blog/).
+**Ready to dive in?** Start with the [Challenge Timeline](/Bug-Bounty-Journey/timeline/) or jump to the [Weekly Reviews](/Bug-Bounty-Journey/blog/).
 
-*Here's to 365 days of growth, discovery, and impact. Let's go! 🚀*
+*Here's to 4 quarters of growth, discovery, and impact. Let's go! 🚀*
 
 ---
 
 **Challenge Start Date**: December 2, 2025  
-**Expected Completion**: December 1, 2026  
-**Days Remaining**: 364
+**Current**: Q1 Week 12, Day 2  
+**Expected Completion**: ~October 2026  
 
 *Last Updated: December 2, 2025*
