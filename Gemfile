@@ -1,13 +1,15 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
-gem "minimal-mistakes-jekyll"
-gem "jekyll-paginate"
-gem "jekyll-sitemap"
-gem "jekyll-gist"
-gem "jekyll-feed"
-gem "jekyll-include-cache"
-gem "jekyll-archives"
+gem "github-pages", "~> 232", group: :jekyll_plugins
+
+group :jekyll_plugins do
+  gem "jekyll-paginate"
+  gem "jekyll-sitemap"
+  gem "jekyll-gist"
+  gem "jekyll-feed"
+  gem "jekyll-include-cache"
+  gem "jekyll-archives"
+end
 
 # If you use Windows and encounter any issues,
 # uncomment the line below.
