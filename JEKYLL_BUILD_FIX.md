@@ -31,12 +31,12 @@ Pagination: Pagination is enabled, but I couldn't find an index.html page to use
 The `LIQUID_SYNTAX_FIX.md` file contained example Liquid template code within backtick code blocks:
 
 ```
-- Before: `{% for post in tag | last | sort: 'date' | reverse %}`
+- Before: `{{ "{%" }} for post in tag | last | sort: 'date' | reverse {{ "%}" }}`
 ```
 
 **Problem**: Jekyll was treating these backtick-enclosed Liquid tags as actual template code that needed to be parsed and executed, rather than as literal examples to be displayed as documentation.
 
-When Jekyll encountered the `{% for ... %}` tag without seeing the corresponding `{% endfor %}` tag (because it was in documentation), it threw a "for tag was never closed" error.
+When Jekyll encountered the `{{ "{%" }} for ... {{ "%}" }}` tag without seeing the corresponding `{{ "{%" }} endfor {{ "%}" }}` tag (because it was in documentation), it threw a "for tag was never closed" error.
 
 ---
 
@@ -50,7 +50,7 @@ Changed backtick-enclosed Liquid examples to use escape sequences:
 
 **Before**:
 ```markdown
-- Before: `{% for post in tag | last | sort: 'date' | reverse %}`
+- Before: `{{ "{%" }} for post in tag | last | sort: 'date' | reverse {{ "%}" }}`
 ```
 
 **After**:
@@ -91,17 +91,17 @@ This resolves the dependency warning during bundle installation.
 
 Jekyll uses Liquid as its templating engine. When processing markdown files:
 1. Jekyll reads each file
-2. It processes Liquid template tags ({% %} and {{ }})
+2. It processes Liquid template tags (`{{ "{%" }}` `{{ "%}" }}` and `{{ "{{" }}` `{{ "}}" }}`)
 3. It renders the output
 
 The issue was that documentation about Liquid syntax was being parsed as actual Liquid code.
 
 ### Solution Details
 
-By converting `{% ... %}` to `{{ "{%" }}...{{ "%}" }}`:
+By converting `{{ "{%" }} ... {{ "%}" }}` to `{{ "{%" }}...{{ "%}" }}`:
 - The curly braces are displayed as text/variables
 - The string `"{%"` is treated as a Liquid variable interpolation
-- Jekyll outputs the literal `{%` characters instead of parsing them
+- Jekyll outputs the literal `{{ "{%" }}` characters instead of parsing them
 - Documentation examples display correctly without errors
 
 ### Why the Gemfile Change Matters
