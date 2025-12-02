@@ -4,7 +4,7 @@
 
 :root {
   --sidebar-width: 300px;
-  --content-max-width: 900px;
+  --content-max-width: 1400px; /* increase so 3 columns + gaps fit comfortably */
 }
 
 /* ===================================
@@ -29,16 +29,63 @@
 }
 
 /* ===================================
-   Feature Cards Layout - SINGLE DEFINITION
+   Remove right padding on pages & archive
+   =================================== */
+/* High-specificity override: remove any right padding/margin injected by theme or inline rules */
+html body,
+.page,
+.page__inner-wrap,
+.page__content,
+.page__inner-wrap > .page__content,
+.page__inner-wrap > .sidebar,
+.site-inner,
+.container,
+.content,
+.content-area,
+.main,
+.site-main,
+.posts-list,
+.archive,
+.archive__wrapper,
+.archive__item {
+  padding-right: 0 !important;
+  padding-inline-end: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+
+/* also reset any large right padding applied at wide breakpoints */
+@media (min-width: 64em) {
+  .page,
+  .page__inner-wrap,
+  .page__content,
+  .archive {
+    padding-right: 0 !important;
+    padding-inline-end: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ===================================
+   Feature Cards Layout - BASE (Mobile First)
    =================================== */
 
 .feature__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: grid !important;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin: 2rem 0;
-  width: 100%;
+  width: 100% !important;
   padding: 0 !important;
+  /* make rows flexible so items can stretch to same height */
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row dense;
+}
+
+/* ensure direct children stretch */
+.feature__wrapper > .feature__item {
+  align-self: stretch;
+  width: auto;
 }
 
 .feature__item {
@@ -69,24 +116,29 @@
     margin: 0 auto;
   }
 
+  /* ensure main/aside layout allows main column to hold the grid */
   .page__inner-wrap {
     display: grid;
-    grid-template-columns: 1fr 250px;
+    grid-template-columns: minmax(0, 1fr) 250px; /* minmax(0,1fr) prevents overflow issues */
     gap: 2rem;
   }
 
-  .sidebar {
-    position: sticky;
-    top: 4rem;
-    order: 2;
-  }
-
-  .page__content {
-    max-width: 100%;
-  }
-
+  /* authoritative desktop grid selectors to override theme rules */
+  .page .page__content .feature__wrapper,
+  .page__content .feature__wrapper,
   .feature__wrapper {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(260px, 1fr)) !important;
+    gap: 2rem !important;
+    grid-auto-rows: 1fr !important;
+  }
+
+  /* small safeguard: reduce card padding if viewport narrower than expected */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .page .page__content .feature__wrapper,
+    .feature__wrapper {
+      grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+    }
   }
 
   .masthead {
@@ -114,6 +166,11 @@
   .posts-list {
     max-width: 100%;
   }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
 }
 
 /* ===================================
@@ -123,7 +180,13 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .feature__wrapper {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
 }
 
 /* ===================================
@@ -159,6 +222,19 @@
 
   .greedy-nav {
     padding: 0.5rem 0;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.1rem; }
+
+  .archive__item-title {
+    font-size: 1.1rem;
+  }
+
+  .archive__item-teaser {
+    font-size: 2rem;
   }
 }
 
@@ -426,19 +502,116 @@ a:hover {
 }
 
 /* ===================================
-   Responsive Typography
+   MEDIA QUERIES - NO DUPLICATES
    =================================== */
 
-@media (max-width: 1024px) {
+/* Tablet: 768px to 1023px - 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
   .feature__wrapper {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
 }
 
+/* Desktop: 1024px and above - authoritative 3 columns */
+@media (min-width: 1024px) {
+  .page {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+
+  /* ensure main/aside layout allows main column to hold the grid */
+  .page__inner-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 250px; /* minmax(0,1fr) prevents overflow issues */
+    gap: 2rem;
+  }
+
+  /* authoritative desktop grid selectors to override theme rules */
+  .page .page__content .feature__wrapper,
+  .page__content .feature__wrapper,
+  .feature__wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(260px, 1fr)) !important;
+    gap: 2rem !important;
+    grid-auto-rows: 1fr !important;
+  }
+
+  /* small safeguard: reduce card padding if viewport narrower than expected */
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .page .page__content .feature__wrapper,
+    .feature__wrapper {
+      grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+    }
+  }
+
+  .masthead {
+    padding: 2rem 0;
+  }
+
+  .greedy-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .greedy-nav a {
+    margin: 0 0.5rem;
+  }
+
+  .page__footer {
+    margin-top: 4rem;
+  }
+
+  .archive__item {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .posts-list {
+    max-width: 100%;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+}
+
+/* Mobile: Below 768px - 1 column */
 @media (max-width: 767px) {
+  .page__inner-wrap {
+    display: block;
+  }
+
+  .sidebar {
+    margin-bottom: 3rem;
+  }
+
+  .page__content {
+    width: 100%;
+  }
+
   .feature__wrapper {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .page__meta {
+    font-size: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .greedy-nav {
+    padding: 0.5rem 0;
   }
 
   h1 { font-size: 1.75rem; }
@@ -453,8 +626,180 @@ a:hover {
   .archive__item-teaser {
     font-size: 2rem;
   }
+}
 
-  .page__meta {
-    font-size: 0.8rem;
+/* ===================================
+   EXTRA: Full reset for right-side padding/margins
+   =================================== */
+
+/* Very high-specificity reset to remove any right padding/margin injected by theme, inline styles or 3rd-party CSS.
+   This targets the most common wrapper/class names used by Minimal Mistakes and similar themes. */
+html body,
+html body > .page,
+.page,
+.page__inner-wrap,
+.page__content,
+.page__inner-wrap > .page__content,
+.page__inner-wrap > .sidebar,
+.site,
+.site-wrapper,
+.site__inner,
+.site__content,
+.container,
+.content,
+.content-area,
+.main,
+.site-main,
+.posts-list,
+.archive,
+.archive__wrapper,
+.archive__item,
+.feature__wrapper {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* If theme reserves a right column (padding/gutter) via grid, ensure the main column can shrink to use full width */
+.page__inner-wrap,
+.page__inner-wrap > * {
+  min-width: 0 !important;
+}
+
+/* Desktop override: ensure no right padding at large breakpoints */
+@media (min-width: 1024px) {
+  html body,
+  .page,
+  .page__inner-wrap,
+  .page__content,
+  .archive {
+    padding-right: 0 !important;
+    padding-inline-end: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ensure main/aside layout allows main column full width without reserving invisible padding */
+  .page__inner-wrap {
+    grid-template-columns: minmax(0, 1fr) 250px !important;
+  }
+
+  /* If any page-specific rule still forces extra inline space, make the archive full-width */
+  .archive,
+  .archive__wrapper {
+    width: auto !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+  }
+
+  /* Specific fix for pages that used float/right-padding previously */
+  .archive[style],
+  .page[style] {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
   }
 }
+
+/* Fallback: explicit rule for typical header / masthead containers */
+.masthead,
+.masthead__inner,
+.masthead__menu {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Ensure the theme's @media (min-width: 64em) .archive { float:right; padding-right:200px } is neutralized.
+   This rule is intentionally specific and last so it overrides the original snippet. */
+@media (min-width: 64em) {
+  /* target the exact selector plus common page wrapper variants */
+  .archive,
+  .archive[data-archive],
+  .page .archive,
+  .page__content .archive,
+  .page__inner-wrap .archive {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    padding-inline-end: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ensure main content isn't constrained by a reserved right gutter */
+  .page__inner-wrap {
+    grid-template-columns: minmax(0, 1fr) 250px !important;
+  }
+
+  /* make sure the article/list inside archive fills the space */
+  .archive .archive__item,
+  .archive__wrapper,
+  .archive__list {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* ------------------------------
+   Targeted override: remove archive right gutter at 64em and 80em
+   ------------------------------ */
+/* Highly-specific selectors + !important to override theme/inline rules */
+@media (min-width: 64em) {
+  body .page__inner-wrap .archive,
+  body .page .archive,
+  .page__content .archive,
+  .archive[data-archive],
+  .archive[style] {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    padding-inline-end: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure inner archive items also don't keep extra right padding */
+  body .page__inner-wrap .archive .archive__item,
+  .page__content .archive .archive__item,
+  .archive__wrapper,
+  .archive__list {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 80em) {
+  body .page__inner-wrap .archive,
+  body .page .archive,
+  .page__content .archive,
+  .archive[data-archive],
+  .archive[style] {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    padding-inline-end: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body .page__inner-wrap .archive .archive__item,
+  .page__content .archive .archive__item,
+  .archive__wrapper,
+  .archive__list {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* End override */

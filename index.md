@@ -200,74 +200,60 @@ Stay updated with my journey:
 
 ---
 
+<!-- Replace the inline style block that was causing conflicts -->
 <style>
+  /* Enforce mobile-first grid, then expand at breakpoints.
+     This replaces the auto-fit rule that collapsed to one column on desktop. */
+
   .feature__wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid !important;
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin: 2rem 0;
+    width: 100%;
+    padding: 0;
+    grid-auto-rows: 1fr; /* equalize row heights */
+  }
+
+  .feature__wrapper > .feature__item {
+    align-self: stretch;
+    width: auto;
+  }
+
+  /* Tablet: 2 columns */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .feature__wrapper {
+      grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+      gap: 2rem;
+    }
+  }
+
+  /* Desktop / Laptop: 3 columns (authoritative) */
+  @media (min-width: 1024px) {
+    /* Target the page content wrapper specifically so this wins */
+    .page .page__content .feature__wrapper,
+    .page__content .feature__wrapper,
+    .feature__wrapper {
+      grid-template-columns: repeat(3, minmax(260px, 1fr)) !important;
+      gap: 2rem !important;
+      grid-auto-rows: 1fr !important;
+      display: grid !important;
+    }
   }
 
   .feature__item {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.25rem;
     background-color: var(--background-color-secondary);
     border-radius: 0.5rem;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: 100%;
   }
 
   .feature__item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .archive__item-teaser {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .archive__item-body h3 {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-  }
-
-  .archive__item-body p {
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s ease;
-    margin-top: 1rem;
-  }
-
-  .btn:hover {
-    background-color: var(--primary-color-lighter);
-  }
-
-  .page__meta-tag {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background-color: var(--background-color-secondary);
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin: 0.25rem;
-    transition: all 0.2s ease;
-  }
-
-  .page__meta-tag:hover {
-    background-color: var(--primary-color);
-    color: white;
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   }
 </style>
