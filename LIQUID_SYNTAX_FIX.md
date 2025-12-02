@@ -49,12 +49,14 @@ All Q1-Q4 and TOTAL rows updated.
 
 #### 4. **_pages/tags.md** (1 logic issue fixed)
 **Line 19 - Tag post filtering**:
-- Before: `{{ "{%" }} for post in tag | last | sort: 'date' | reverse {{ "%}" }}`
+- Before: {% raw %}`{% for post in tag | last | sort: 'date' | reverse %}`{% endraw %}
 - After: Split into two lines using assign first:
+  {% raw %}
   ```liquid
-  {{ "{%" }} assign sorted_posts = tag | last | sort: 'date' | reverse {{ "%}" }}
-  {{ "{%" }} for post in sorted_posts {{ "%}" }}
+  {% assign sorted_posts = tag | last | sort: 'date' | reverse %}
+  {% for post in sorted_posts %}
   ```
+  {% endraw %}
 
 Reason: Liquid doesn't allow piping within for loop iterator. Must assign first.
 

@@ -30,13 +30,15 @@ Pagination: Pagination is enabled, but I couldn't find an index.html page to use
 
 The `LIQUID_SYNTAX_FIX.md` file contained example Liquid template code within backtick code blocks:
 
+{% raw %}
 ```
-- Before: `{{ "{%" }} for post in tag | last | sort: 'date' | reverse {{ "%}" }}`
+- Before: `{% for post in tag | last | sort: 'date' | reverse %}`
 ```
+{% endraw %}
 
 **Problem**: Jekyll was treating these backtick-enclosed Liquid tags as actual template code that needed to be parsed and executed, rather than as literal examples to be displayed as documentation.
 
-When Jekyll encountered the `{{ "{%" }} for ... {{ "%}" }}` tag without seeing the corresponding `{{ "{%" }} endfor {{ "%}" }}` tag (because it was in documentation), it threw a "for tag was never closed" error.
+When Jekyll encountered the {% raw %}`{% for ... %}`{% endraw %} tag without seeing the corresponding {% raw %}`{% endfor %}`{% endraw %} tag (because it was in documentation), it threw a "for tag was never closed" error.
 
 ---
 
@@ -46,17 +48,21 @@ When Jekyll encountered the `{{ "{%" }} for ... {{ "%}" }}` tag without seeing t
 
 **File Modified**: `LIQUID_SYNTAX_FIX.md`
 
-Changed backtick-enclosed Liquid examples to use escape sequences:
+Changed backtick-enclosed Liquid examples to use raw tags:
 
 **Before**:
+{% raw %}
 ```markdown
-- Before: `{{ "{%" }} for post in tag | last | sort: 'date' | reverse {{ "%}" }}`
+- Before: `{% for post in tag | last | sort: 'date' | reverse %}`
 ```
+{% endraw %}
 
 **After**:
+{% raw %}
 ```markdown
-- Before: `{{ "{%" }} for post in tag | last | sort: 'date' | reverse {{ "%}" }}`
+- Before: `{% for post in tag | last | sort: 'date' | reverse %}`
 ```
+{% endraw %}
 
 This prevents Jekyll from interpreting the Liquid syntax as executable code and instead displays it as documentation text.
 
@@ -91,18 +97,18 @@ This resolves the dependency warning during bundle installation.
 
 Jekyll uses Liquid as its templating engine. When processing markdown files:
 1. Jekyll reads each file
-2. It processes Liquid template tags (`{{ "{%" }}` `{{ "%}" }}` and `{{ "{{" }}` `{{ "}}" }}`)
+2. It processes Liquid template tags ({% raw %}`{% %}`{% endraw %} and {% raw %}`{{ }}`{% endraw %})
 3. It renders the output
 
 The issue was that documentation about Liquid syntax was being parsed as actual Liquid code.
 
 ### Solution Details
 
-By converting `{{ "{%" }} ... {{ "%}" }}` to `{{ "{%" }}...{{ "%}" }}`:
-- The curly braces are displayed as text/variables
-- The string `"{%"` is treated as a Liquid variable interpolation
-- Jekyll outputs the literal `{{ "{%" }}` characters instead of parsing them
+By wrapping Liquid examples in {% raw %}`{% raw %}`...`{% endraw %}`{% endraw %}:
+- The content inside is treated as plain text
+- Jekyll does not process any Liquid syntax
 - Documentation examples display correctly without errors
+- The syntax is clear and readable
 
 ### Why the Gemfile Change Matters
 
