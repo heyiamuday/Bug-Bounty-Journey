@@ -43,6 +43,135 @@ A **12-week quarterly challenge** allows for:
 
 ---
 
+## Quarterly Themes
+
+Each quarter has a specific focus and learning progression, building upon the previous quarter.
+
+### **Q1: Security Foundations & Foundation Building** 🛡️
+**Timeline**: December 2025 - February 2026  
+**Focus**: Establish fundamentals and core security concepts
+
+**Key Areas**:
+- Reconnaissance techniques (passive & active)
+- Web application security basics (OWASP Top 10)
+- Authentication and authorization vulnerabilities
+- SQL injection and basic injection attacks
+- XSS, CSRF, and common web vulnerabilities
+- Burp Suite mastery and workflow optimization
+- API security fundamentals
+- Documentation and reporting standards
+
+**Goals**:
+- Master foundational bug bounty methodology
+- Build systematic reconnaissance process
+- Identify and report 10-15 vulnerabilities
+- Establish daily logging habits
+- Create comprehensive methodology documentation
+
+**Milestones**:
+- ✓ Week 12: Foundation & first findings
+- ⏳ Week 8-9: First critical vulnerability report
+- ⏳ Week 4-5: 50% quarterly target reached
+- ⏳ Week 1: Q1 comprehensive review & Q2 planning
+
+---
+
+### **Q2: Advanced Techniques & Specialization** 🔧
+**Timeline**: March - May 2026  
+**Focus**: Develop specialized skills and advanced methodologies
+
+**Key Areas**:
+- Advanced authentication bypass techniques
+- Business logic vulnerability identification
+- Privilege escalation vectors
+- Race conditions and concurrency issues
+- Advanced API security and GraphQL testing
+- Source code review and code-level vulnerabilities
+- Infrastructure and cloud security
+- Specialized tool development and automation
+
+**Goals**:
+- Identify specialized vulnerability types
+- Develop 2-3 custom tools or scripts
+- Report 15-20 vulnerabilities
+- Build expertise in 1-2 niche areas
+- Establish repeatable exploitation patterns
+
+**Milestones**:
+- ⏳ Week 12: Advanced technique deep-dives
+- ⏳ Week 8-9: First custom tool development
+- ⏳ Week 4-5: Specialization path defined
+- ⏳ Week 1: Q2 comprehensive review & Q3 planning
+
+---
+
+### **Q3: Mastery & Optimization** 🎯
+**Timeline**: June - August 2026  
+**Focus**: Achieve mastery and optimize for efficiency
+
+**Key Areas**:
+- Zero-day vulnerability hunting
+- Advanced exploitation techniques
+- Complex vulnerability chains
+- Performance optimization of scanning workflows
+- Vulnerability prioritization and triage mastery
+- Multi-layer vulnerability analysis
+- Industry-specific security patterns
+- Research publication and presentation skills
+
+**Goals**:
+- Discover 20-25 vulnerabilities including complex chains
+- Publish 2-3 research articles or case studies
+- Achieve 80%+ first-response accuracy
+- Mentor or collaborate with 2-3 researchers
+- Establish as recognized specialist
+
+**Milestones**:
+- ⏳ Week 12: Mastery consolidation
+- ⏳ Week 8-9: First published research
+- ⏳ Week 4-5: Complex vulnerability chain discovered
+- ⏳ Week 1: Q3 comprehensive review & Q4 planning
+
+---
+
+### **Q4: Legacy & Impact** 🌟
+**Timeline**: September - November 2026  
+**Focus**: Build legacy and create lasting impact
+
+**Key Areas**:
+- Strategic vulnerability research
+- Industry collaboration and partnerships
+- Community education and mentorship
+- Process refinement and best practices documentation
+- Recognition and award submissions
+- Long-term methodology refinement
+- Knowledge consolidation and synthesis
+- Future direction planning
+
+**Goals**:
+- Achieve 100+ vulnerabilities reported across all quarters
+- Build comprehensive methodology documentation
+- Mentor 3-5 upcoming researchers
+- Contribute to security community (conference, publication, tools)
+- Establish foundation for ongoing research
+
+**Milestones**:
+- ⏳ Week 12: Impact and legacy planning
+- ⏳ Week 8-9: Community contribution milestone
+- ⏳ Week 4-5: 100-vulnerability achievement
+- ⏳ Week 1: Final comprehensive review & future planning
+
+---
+
+## Quick Quarter Links
+
+- **[Q1 Dashboard](/Bug-Bounty-Journey/q1/)** - Security Foundations (Dec 2025 - Feb 2026)
+- **[Q2 Dashboard](/Bug-Bounty-Journey/q2/)** - Advanced Techniques (Mar - May 2026)
+- **[Q3 Dashboard](/Bug-Bounty-Journey/q3/)** - Mastery & Optimization (Jun - Aug 2026)
+- **[Q4 Dashboard](/Bug-Bounty-Journey/q4/)** - Legacy & Impact (Sep - Nov 2026)
+
+---
+
 ## Daily Logs & Weekly Reviews
 
 ### Daily Logs (12 logs per week × 4 quarters = ~48 weeks)

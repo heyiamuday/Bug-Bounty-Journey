@@ -2,18 +2,27 @@
 main:
   - title: "Home"
     url: /Bug-Bounty-Journey/
-  - title: "About Me"
-    url: /Bug-Bounty-Journey/about/
-  - title: "Impossible List"
-    url: /Bug-Bounty-Journey/impossible-list/
-  - title: "Challenge"
-    url: /Bug-Bounty-Journey/challenge/
-  - title: "Weekly Reviews"
-    url: /Bug-Bounty-Journey/blog/
   - title: "Timeline"
     url: /Bug-Bounty-Journey/timeline/
+  - title: "Reviews"
+    url: /Bug-Bounty-Journey/reviews/
+  - title: "Quarters"
+    url: "#"
+    children:
+      - title: "Q1: Foundations"
+        url: /Bug-Bounty-Journey/q1/
+      - title: "Q2: Advanced"
+        url: /Bug-Bounty-Journey/q2/
+      - title: "Q3: Mastery"
+        url: /Bug-Bounty-Journey/q3/
+      - title: "Q4: Legacy"
+        url: /Bug-Bounty-Journey/q4/
+  - title: "Challenge"
+    url: /Bug-Bounty-Journey/challenge/
   - title: "Tags"
     url: /Bug-Bounty-Journey/tags/
+  - title: "About"
+    url: /Bug-Bounty-Journey/about/
 
 # footer links (optional)
 footer:
