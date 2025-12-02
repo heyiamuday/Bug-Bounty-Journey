@@ -8,11 +8,62 @@
 }
 
 /* ===================================
+   Remove Unwanted Page Padding
+   =================================== */
+
+.page {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page__content {
+  padding: 0 !important;
+}
+
+.archive {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  float: none !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+
+/* ===================================
+   Feature Cards Layout - SINGLE DEFINITION
+   =================================== */
+
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.feature__item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: var(--background-color-secondary);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature__item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--link-color);
+}
+
+/* ===================================
    Desktop Layout Improvements
    =================================== */
 
-@media (min-width: 768px) {
-  /* Force proper desktop layout */
+@media (min-width: 1024px) {
   .page {
     max-width: var(--content-max-width);
     margin: 0 auto;
@@ -24,27 +75,20 @@
     gap: 2rem;
   }
 
-  /* Sidebar positioning */
   .sidebar {
     position: sticky;
     top: 4rem;
     order: 2;
   }
 
-  /* Main content wider on desktop */
   .page__content {
     max-width: 100%;
   }
 
-  /* Feature wrapper - ensure 3-column grid on desktop */
   .feature__wrapper {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
   }
 
-  /* Improve masthead spacing */
   .masthead {
     padding: 2rem 0;
   }
@@ -54,25 +98,31 @@
     align-items: center;
   }
 
-  /* Navigation items spacing */
   .greedy-nav a {
     margin: 0 0.5rem;
   }
 
-  /* Better footer spacing */
   .page__footer {
     margin-top: 4rem;
   }
 
-  /* Archive items - better desktop display */
   .archive__item {
     padding: 1.5rem 0;
     margin-bottom: 1.5rem;
   }
 
-  /* Posts and pages better sizing */
   .posts-list {
     max-width: 100%;
+  }
+}
+
+/* ===================================
+   Tablet Layout
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .feature__wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -81,7 +131,6 @@
    =================================== */
 
 @media (max-width: 767px) {
-  /* Stack layout on mobile */
   .page__inner-wrap {
     display: block;
   }
@@ -90,30 +139,24 @@
     margin-bottom: 3rem;
   }
 
-  /* Ensure full width on mobile */
   .page__content {
     width: 100%;
   }
 
-  /* Single column feature wrapper */
   .feature__wrapper {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  /* Reduce spacing on mobile */
   .page__meta {
     font-size: 0.75rem;
   }
 
-  /* Smaller buttons on mobile */
   .btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
   }
 
-  /* Better nav on mobile */
   .greedy-nav {
     padding: 0.5rem 0;
   }
@@ -155,83 +198,6 @@ body.dark,
 
 .dark .btn--primary:hover,
 [data-theme='dark'] .btn--primary:hover {
-  background-color: #1565c0;
-}
-
-/* ===================================
-   Feature Cards Improvements
-   =================================== */
-
-.feature__wrapper {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.feature__item {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  background-color: var(--background-color-secondary);
-  border-radius: 0.5rem;
-  border: 1px solid var(--border-color);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
-.feature__item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-color: var(--link-color);
-}
-
-.archive__item-teaser {
-  font-size: 2.5rem;
-  color: var(--link-color);
-  margin-bottom: 1rem;
-  text-align: center;
-  line-height: 1;
-}
-
-.archive__item-body h3 {
-  margin: 0.75rem 0;
-  font-size: 1.1rem;
-  color: var(--text-color);
-}
-
-.archive__item-body p {
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-  color: var(--text-color-secondary);
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background-color: #1976d2;
-  color: white;
-  text-decoration: none;
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  align-self: flex-start;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #1565c0;
-  transform: translateX(2px);
-}
-
-.btn--primary {
-  background-color: #1976d2;
-}
-
-.btn--primary:hover {
   background-color: #1565c0;
 }
 
@@ -491,63 +457,4 @@ a:hover {
   .page__meta {
     font-size: 0.8rem;
   }
-}
-
-/* ===================================
-   Fix Archive Layout Conflicts
-   =================================== */
-
-.archive {
-  margin-top: 1em;
-  margin-bottom: 2em;
-  float: none !important;
-  width: 100% !important;
-  padding-right: 0 !important;
-}
-
-@media (min-width: 64em) {
-  .archive {
-    float: none !important;
-    width: 100% !important;
-    padding-right: 0 !important;
-  }
-}
-
-@media (min-width: 80em) {
-  .archive {
-    float: none !important;
-    width: 100% !important;
-    padding-right: 0 !important;
-  }
-}
-
-/* ===================================
-   Feature Cards Layout
-   =================================== */
-
-.feature__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-  width: 100%;
-  padding: 0;
-}
-
-.feature__item {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  background-color: var(--background-color-secondary);
-  border-radius: 0.5rem;
-  border: 1px solid var(--border-color);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
-.feature__item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-color: var(--link-color);
 }
