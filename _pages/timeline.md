@@ -109,11 +109,11 @@ Q1 (Dec - Feb)  →  Q2 (Mar - May)  →  Q3 (Jun - Aug)  →  Q4 (Sep - Nov)
 
 | Quarter | Weeks | Days | Logs | Status |
 |---------|-------|------|------|--------|
-| **Q1** | 12 | 84 | {% assign q1_count = site.logs \| where: "quarter", "Q1" \| size %}{{ q1_count }} | {% if q1_count > 0 %}In Progress{% else %}Not Started{% endif %} |
-| **Q2** | 12 | 84 | {% assign q2_count = site.logs \| where: "quarter", "Q2" \| size %}{{ q2_count }} | {% if q2_count > 0 %}In Progress{% else %}Not Started{% endif %} |
-| **Q3** | 12 | 84 | {% assign q3_count = site.logs \| where: "quarter", "Q3" \| size %}{{ q3_count }} | {% if q3_count > 0 %}In Progress{% else %}Not Started{% endif %} |
-| **Q4** | 12 | 84 | {% assign q4_count = site.logs \| where: "quarter", "Q4" \| size %}{{ q4_count }} | {% if q4_count > 0 %}In Progress{% else %}Not Started{% endif %} |
-| **TOTAL** | 48 | 336 | {% assign total = site.logs \| size %}{{ total }} | {{ total }}/336 Complete |
+| **Q1** | 12 | 84 | {% assign q1_count = site.logs | where: "quarter", "Q1" | size %}{{ q1_count }} | {% if q1_count > 0 %}In Progress{% else %}Not Started{% endif %} |
+| **Q2** | 12 | 84 | {% assign q2_count = site.logs | where: "quarter", "Q2" | size %}{{ q2_count }} | {% if q2_count > 0 %}In Progress{% else %}Not Started{% endif %} |
+| **Q3** | 12 | 84 | {% assign q3_count = site.logs | where: "quarter", "Q3" | size %}{{ q3_count }} | {% if q3_count > 0 %}In Progress{% else %}Not Started{% endif %} |
+| **Q4** | 12 | 84 | {% assign q4_count = site.logs | where: "quarter", "Q4" | size %}{{ q4_count }} | {% if q4_count > 0 %}In Progress{% else %}Not Started{% endif %} |
+| **TOTAL** | 48 | 336 | {% assign total = site.logs | size %}{{ total }} | {{ total }}/336 Complete |
 
 ---
 

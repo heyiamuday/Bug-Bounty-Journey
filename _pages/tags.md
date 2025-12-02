@@ -23,7 +23,8 @@ author_profile: true
   {% for tag in site.tags %}
     <h2 id="{{ tag | first | slugify }}" class="tag-heading">{{ tag | first }}</h2>
     <ul class="tags-posts-list">
-      {% for post in tag | last | sort: 'date' | reverse %}
+      {% assign sorted_posts = tag | last | sort: 'date' | reverse %}
+      {% for post in sorted_posts %}
         <li>
           <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
           <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>

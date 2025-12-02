@@ -188,10 +188,10 @@ Comprehensive long-form analysis of each week and quarter. These in-depth posts 
 
 | Quarter | Weekly Reviews | Quarterly Summary | Total Posts |
 |---------|----------------|-------------------|-------------|
-| **Q1** | {{ site.posts \| where: "quarter", "Q1" \| where_exp: "post", "post.categories contains 'weekly-review'" \| size }} | {% if site.posts \| where: "quarter", "Q1" \| where_exp: "post", "post.categories contains 'quarter-summary'" \| size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts \| where: "quarter", "Q1" \| size }} |
-| **Q2** | {{ site.posts \| where: "quarter", "Q2" \| where_exp: "post", "post.categories contains 'weekly-review'" \| size }} | {% if site.posts \| where: "quarter", "Q2" \| where_exp: "post", "post.categories contains 'quarter-summary'" \| size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts \| where: "quarter", "Q2" \| size }} |
-| **Q3** | {{ site.posts \| where: "quarter", "Q3" \| where_exp: "post", "post.categories contains 'weekly-review'" \| size }} | {% if site.posts \| where: "quarter", "Q3" \| where_exp: "post", "post.categories contains 'quarter-summary'" \| size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts \| where: "quarter", "Q3" \| size }} |
-| **Q4** | {{ site.posts \| where: "quarter", "Q4" \| where_exp: "post", "post.categories contains 'weekly-review'" \| size }} | {% if site.posts \| where: "quarter", "Q4" \| where_exp: "post", "post.categories contains 'quarter-summary'" \| size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts \| where: "quarter", "Q4" \| size }} |
+| **Q1** | {{ site.posts | where: "quarter", "Q1" | where_exp: "post", "post.categories contains 'weekly-review'" | size }} | {% if site.posts | where: "quarter", "Q1" | where_exp: "post", "post.categories contains 'quarter-summary'" | size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts | where: "quarter", "Q1" | size }} |
+| **Q2** | {{ site.posts | where: "quarter", "Q2" | where_exp: "post", "post.categories contains 'weekly-review'" | size }} | {% if site.posts | where: "quarter", "Q2" | where_exp: "post", "post.categories contains 'quarter-summary'" | size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts | where: "quarter", "Q2" | size }} |
+| **Q3** | {{ site.posts | where: "quarter", "Q3" | where_exp: "post", "post.categories contains 'weekly-review'" | size }} | {% if site.posts | where: "quarter", "Q3" | where_exp: "post", "post.categories contains 'quarter-summary'" | size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts | where: "quarter", "Q3" | size }} |
+| **Q4** | {{ site.posts | where: "quarter", "Q4" | where_exp: "post", "post.categories contains 'weekly-review'" | size }} | {% if site.posts | where: "quarter", "Q4" | where_exp: "post", "post.categories contains 'quarter-summary'" | size > 0 %}Yes{% else %}Coming{% endif %} | {{ site.posts | where: "quarter", "Q4" | size }} |
 
 ---
 
