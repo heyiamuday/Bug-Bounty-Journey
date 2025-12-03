@@ -134,15 +134,56 @@ This file was already created. It controls your site's main navigation menu. No 
 
 This file was already created. The file was pre-populated with sample content.
 
-**To view it**:
-1. Open the file in VS Code
-2. Review the front matter (between `---` markers)
-3. Customize the content as needed
+**Filename guidance (important)**:
+- Recommended (consistent with Jekyll & URLs): use hyphens
+  - Format: `YYYY-MM-DD-day-NNN.md`
+  - Example: `2025-12-02-day-001.md`
+- Underscores are allowed in filenames (e.g. `2025-12-01_W12-day-7.md`) but note:
+  - They'll appear in generated URLs unless you override the permalink (underscores are valid but less common in URLs).
+  - Hyphens are preferred for readability and SEO.
 
-**Important**: File naming convention is critical:
-- **Format**: `YYYY-MM-DD-day-NNN.md`
-- **Example**: `2025-12-02-day-001.md` for Day 1
-- **Next file**: `2025-12-03-day-002.md` for Day 2
+**If you change filename pattern (e.g. add underscores or change ordering) — what to update**
+1. Update any manual internal links that reference the filename (Next/Prev links inside other logs or pages).
+2. Prefer using front matter fields (quarter, week_number, day_number, slug) and use `{{ log.url }}` in templates — this decouples display URLs from filename.
+3. If you want clean URLs regardless of the filename, set explicit permalinks:
+   - Add a `slug` in front matter and use permalink templates, or
+   - Set collection permalink in `_config.yml` (example below).
+
+Example `_config.yml` snippet (optional) to normalize URLs:
+```yaml
+# Add/adjust in _config.yml
+collections:
+  logs:
+    output: true
+    permalink: /log/:basename/    # uses filename basename (no extension)
+# OR
+defaults:
+  - scope:
+      path: ""
+      type: logs
+    values:
+      layout: log
+      author_profile: false
+      read_time: true
+      share: true
+      # You can add 'slug' in each log front matter and use explicit permalink in individual front matter:
+      # permalink: /log/:slug/
+```
+
+Example per-file front matter to force a clean URL (recommended if you use underscores in filenames):
+```yaml
+---
+layout: log
+title: "Day 7: ..."
+date: 2025-12-01
+slug: "q1-w12-day-7"           # human-friendly slug used for URL
+permalink: /log/:slug/        # set per-file or rely on defaults
+---
+```
+
+**Backfill / automation notes**
+- If you rename existing files or adopt underscores, update any CI scripts, build scripts or automated rename tools that rely on the old pattern.
+- For links inside other markdown files, search the repo for occurrences of the old filename pattern and update (simple grep for `YYYY-MM-DD` patterns helps).
 
 ### Step 5: Create Daily Log Template
 

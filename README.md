@@ -103,7 +103,9 @@ Then:
 
 ### Adding a Daily Log
 
-**File**: `_logs/YYYY-MM-DD-day-NNN.md`
+**File**: `_logs/YYYY-MM-DD-day-NNN.md` (recommended)
+
+> Note: Hyphens are recommended for filenames and URLs. Underscores are allowed but will appear in generated URLs unless you set per-file `permalink` or `slug` front matter to normalize the URL.
 
 **Template**:
 ```markdown
@@ -112,6 +114,11 @@ layout: log
 title: "Day NNN: [Title]"
 date: YYYY-MM-DD
 author: "Your Name"
+quarter: "Q1"
+week_number: 12
+day_number: N
+slug: "q1-w12-day-N"        # optional - forces a clean URL if needed
+permalink: /log/:slug/      # optional - per-file permalink
 tags:
   - day-NNN
   - [theme-tag]

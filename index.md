@@ -192,6 +192,33 @@ Stay updated with my journey:
 3. **Ready to Dive In**: [View the Timeline](/Bug-Bounty-Journey/timeline/)
 4. **Want Analysis**: [Read the Latest Weekly Review](/Bug-Bounty-Journey/blog/)
 
+## Filename & front-matter convention (if you change filenames)
+If you adopt filenames like:
+- 2025-12-01_W12-day-1.md (Monday)
+- 2025-12-02_W12-day-2.md (Tuesday)
+- 2025-12-08_W11-day-1.md (next Monday)
+- 2025-12-09_W11-day-2.md (next Tuesday)
+
+Then:
+- Keep each file's front matter authoritative. Required front matter fields (example):
+  ---
+  layout: log
+  title: "Q1 Week 12 Day 1: [Title]"
+  date: 2025-12-01
+  quarter: "Q1"
+  week_number: 12
+  day_number: 1
+  ---
+- Update _config.yml if you want stable, pretty URLs. Example (recommended):
+  collections:
+    logs:
+      output: true
+      permalink: /log/:year/:month/:day/:basename/
+  This produces URLs like: /log/2025/12/01/2025-12-01_W12-day-1/
+- If you need backwards compatibility with old URLs, add a permalink key in the log's front matter:
+  permalink: /log/2025-12-01-day-001/
+- Avoid parsing data from filenames in templates; use the front matter fields (quarter, week_number, day_number) instead.
+
 ---
 
 **Ready to follow the journey?** [Explore the timeline →](/Bug-Bounty-Journey/timeline/)

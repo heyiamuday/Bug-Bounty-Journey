@@ -266,3 +266,10 @@ excerpt: "Brief summary of the day's work and findings."
     line-height: 1.6;
   }
 </style>
+
+---
+
+Note on filenames and URLs
+- The timeline page uses each log's front matter and `{{ log.url }}` to build links.
+- This means you can change filenames (underscores or different ordering) as long as each log file includes the required front matter (date, quarter, week_number, day_number).
+- If you want a different public URL than the filename produces, add `slug` and `permalink` in the log front matter (see README / SETUP_GUIDE).
