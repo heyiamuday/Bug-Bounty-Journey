@@ -3,6 +3,7 @@ title: "Q1 Week 11 Review: "
 date: {{date:YYYY-MM-DD}}
 quarter: 1
 week: 11
+phase: 2
 weekProgress: 0
 wins:
   - ""

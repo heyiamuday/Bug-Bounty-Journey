@@ -3,6 +3,7 @@ title: "Day {{date:X}}: "
 date: {{date:YYYY-MM-DD}}
 quarter: 1
 week: 11
+phase: 2
 tags: []
 executionScore: 
 description: ""

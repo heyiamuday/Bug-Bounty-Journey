@@ -24,5 +24,8 @@ pnpm-debug.log*
 *.swp
 *.swo
 
+# Obsidian configuration
+.obsidian/
+
 # misc
 *.log
