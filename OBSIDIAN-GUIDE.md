@@ -185,7 +185,7 @@ If you prefer manual control:
 
 ```bash
 # After writing content in Obsidian
-cd /home/bughunter/BUG~REALM/BUG-BOUNTY-JOURNEY/2026-Hacking-Journey
+cd /home/bughunter/.../../
 git add src/content/
 git commit -m "Add daily log for Dec 9"
 git push
