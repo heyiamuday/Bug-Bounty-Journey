@@ -8,7 +8,7 @@ Complete guide to using Obsidian with your Bug Bounty Journey site.
 
 1. **Open Obsidian**
 2. Click **"Open folder as vault"** (or "Open another vault")
-3. Navigate to: `/home/bughunter/BUG~REALM/BUG-BOUNTY-JOURNEY/2026-Hacking-Journey`
+3. Navigate to: `/homme/bughunterrr/yourfloderpath`
 4. Click **"Open"**
 
 Your entire project is now an Obsidian vault! 🎉
