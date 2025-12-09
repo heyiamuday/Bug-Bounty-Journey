@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reviews/KWM-week-11-review.md",
+                "file": "reviews/p1-week-11-review.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "KWM-week-11-review"
+              "title": "p1-week-11-review"
             }
           }
         ],
@@ -210,14 +210,14 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "8d3590b875eb24ee",
+  "active": "83830d8aaa7442ac",
   "lastOpenFiles": [
     "logs/2025-12-02_W12_day-3.md",
     "logs/2025-12-03_W12_day-3.md",
     "logs/2025-12-08_W11_day-1.md",
     "logs/2025-12-01_W12_day-1 copy.md",
-    "reviews/KWM-week-11-review.md",
-    "reviews/KWM-week-12-review.md",
+    "reviews/p1-week-11-review.md",
+    "reviews/p1-week-12-review.md",
     "logs/2025-12-02_W12_day-2.md",
     "logs/2025-12-01_W12_day-1.md"
   ]
