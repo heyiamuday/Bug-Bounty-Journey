@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: #0F172A;
+    --color-bg-secondary: #1E293B;
+    --color-bg-darker: #0A0F1E;
+    --color-text-primary: #F1F5F9;
+    --color-text-secondary: #CBD5E1;
+    --color-accent-sage: #86EFAC;
+    --color-accent-indigo: #818CF8;
+    --color-accent-slate: #94A3B8;
+  }
+
+  * {
+    @apply border-slate-700;
+  }
+
+  body {
+    @apply bg-deep-blue text-slate-100;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-slate-50;
+    line-height: 1.3;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  a {
+    @apply text-soft-indigo hover:text-sage transition-colors duration-200;
+  }
+
+  p {
+    @apply text-slate-300 mb-4;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-charcoal rounded-lg p-6 shadow-lg border border-slate-700/50 hover:border-slate-600 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 inline-block;
+  }
+
+  .btn-primary {
+    @apply bg-soft-indigo text-white hover:bg-indigo-500 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-charcoal text-slate-100 hover:bg-slate-700 border border-slate-600;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 text-xs font-medium rounded-full bg-slate-700 text-sage border border-slate-600;
+  }
+
+  .progress-bar {
+    @apply w-full h-2 bg-slate-800 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-soft-indigo to-sage transition-all duration-500;
+  }
+
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply text-slate-50 mt-8 mb-4;
+  }
+
+  .prose p {
+    @apply text-slate-300 mb-4;
+  }
+
+  .prose ul, .prose ol {
+    @apply text-slate-300 mb-4 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose code {
+    @apply bg-slate-800 px-2 py-1 rounded text-sm text-sage;
+  }
+
+  .prose pre {
+    @apply bg-slate-900 p-4 rounded-lg overflow-x-auto mb-4 border border-slate-700;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-soft-indigo pl-4 italic text-slate-400 my-4;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-soft-indigo to-sage bg-clip-text text-transparent;
+  }
+
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-4 transition-all duration-700;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}

@@ -1,0 +1,97 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  slug: string;
+  quarter: number;
+  week: number;
+  weekProgress: number;
+  wins: string[];
+  challenges: string[];
+}
+
+const { title, date, slug, quarter, week, weekProgress, wins, challenges } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+const formattedDate = date.toLocaleDateString('en-US', { 
+  month: 'long', 
+  day: 'numeric', 
+  year: 'numeric' 
+});
+---
+
+<article class="card card-hover">
+  <div class="flex items-start justify-between mb-4">
+    <div>
+      <h3 class="text-2xl font-bold mb-2">
+        <a href={`${baseUrl}/reviews/${slug}/`} class="hover:text-soft-indigo transition">
+          {title}
+        </a>
+      </h3>
+      <div class="flex items-center space-x-4 text-sm text-slate-400">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        <span class="px-2 py-1 bg-soft-indigo/20 text-soft-indigo rounded text-xs font-medium">
+          Q{quarter} Week {week}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="mb-6">
+    <div class="flex justify-between items-center mb-2">
+      <span class="text-sm text-slate-400">Week Progress</span>
+      <span class="text-sm font-semibold text-sage">{weekProgress}%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style={`width: ${weekProgress}%`}></div>
+    </div>
+  </div>
+
+  <!-- Wins & Challenges Preview -->
+  <div class="grid md:grid-cols-2 gap-4">
+    {wins.length > 0 && (
+      <div>
+        <h4 class="text-sm font-semibold text-sage mb-2 flex items-center">
+          <span class="mr-2">🎯</span> Wins
+        </h4>
+        <ul class="text-sm text-slate-300 space-y-1">
+          {wins.slice(0, 2).map(win => (
+            <li class="flex items-start">
+              <span class="text-sage mr-2">•</span>
+              <span>{win}</span>
+            </li>
+          ))}
+          {wins.length > 2 && (
+            <li class="text-slate-400 italic">+{wins.length - 2} more...</li>
+          )}
+        </ul>
+      </div>
+    )}
+
+    {challenges.length > 0 && (
+      <div>
+        <h4 class="text-sm font-semibold text-orange-400 mb-2 flex items-center">
+          <span class="mr-2">🚧</span> Challenges
+        </h4>
+        <ul class="text-sm text-slate-300 space-y-1">
+          {challenges.slice(0, 2).map(challenge => (
+            <li class="flex items-start">
+              <span class="text-orange-400 mr-2">•</span>
+              <span>{challenge}</span>
+            </li>
+          ))}
+          {challenges.length > 2 && (
+            <li class="text-slate-400 italic">+{challenges.length - 2} more...</li>
+          )}
+        </ul>
+      </div>
+    )}
+  </div>
+
+  <div class="mt-4 pt-4 border-t border-slate-700">
+    <a href={`${baseUrl}/reviews/${slug}/`} class="text-soft-indigo hover:text-sage transition font-medium text-sm">
+      Read full review →
+    </a>
+  </div>
+</article>

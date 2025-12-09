@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Impossible List" description="My impossible list - goals and achievements that seemed impossible">
+  <div class="container-custom py-12">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        The <span class="text-gradient">Impossible List</span>
+      </h1>
+      <p class="text-xl text-slate-300 mb-12">
+        Not a bucket list. An ever-evolving list of goals that push my limits and redefine what's possible.
+        Inspired by <a href="https://impossiblehq.com/impossible-list/" target="_blank" class="text-soft-indigo hover:text-sage">Joel Runyon's Impossible List</a>.
+      </p>
+
+      <!-- Current Goals -->
+      <div class="card mb-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+          <span class="text-soft-indigo mr-2">🎯</span>
+          Current Challenges
+        </h2>
+        
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-sage mb-3">Bug Bounty</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Submit my first valid bug report</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Earn my first bounty ($)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Find a critical vulnerability</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Get listed on a Hall of Fame</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Earn $10,000 in bounties</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Chain multiple vulnerabilities for maximum impact</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-sage mb-3">Skills & Certifications</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Complete all PortSwigger Academy labs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Earn OSCP certification</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Earn OSWE certification</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Master Burp Suite like a pro</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-sage mb-3">Contribution & Impact</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Publish a bug bounty writeup</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Create a useful security tool</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Help another beginner get their first bug</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-slate-500 mr-3">☐</span>
+                <span>Speak at a security conference</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed Goals -->
+      <div class="card mb-8 bg-sage/5 border-sage/30">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+          <span class="text-sage mr-2">✅</span>
+          Accomplished
+        </h2>
+        
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-semibold text-sage mb-3">Foundation</h3>
+            <ul class="space-y-2 text-slate-300">
+              <li class="flex items-start">
+                <span class="text-sage mr-3">✓</span>
+                <span>Started the bug bounty journey (Dec 2025)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-sage mr-3">✓</span>
+                <span>Built a public learning journal</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-sage mr-3">✓</span>
+                <span>Set up professional testing environment</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Life Goals (Beyond Security) -->
+      <div class="card">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+          <span class="text-soft-indigo mr-2">🌟</span>
+          Life & Growth
+        </h2>
+        
+        <div class="space-y-4">
+          <p class="text-slate-300">
+            The Impossible List isn't just about bug bounty. It's about becoming the best version of myself.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-slate-500 mr-3">☐</span>
+              <span>Complete a 365-day learning streak</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-slate-500 mr-3">☐</span>
+              <span>Read 52 books in a year</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-slate-500 mr-3">☐</span>
+              <span>Build a sustainable remote career in security</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="mt-8 p-6 bg-soft-indigo/10 border border-soft-indigo/30 rounded-lg">
+        <p class="text-sm text-slate-300">
+          <strong>Note:</strong> This list will evolve. As I accomplish goals, new impossible ones replace them.
+          The point isn't to complete the list—it's to keep pushing forward.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

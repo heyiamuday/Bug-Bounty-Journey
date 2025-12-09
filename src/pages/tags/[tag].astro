@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LogCard from '../../components/LogCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allLogs = await getCollection('logs');
+  
+  // Get unique tags
+  const uniqueTags = [...new Set(allLogs.flatMap(log => log.data.tags))];
+  
+  return uniqueTags.map(tag => {
+    const filteredLogs = allLogs
+      .filter(log => log.data.tags.includes(tag))
+      .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    
+    return {
+      params: { tag },
+      props: { tag, logs: filteredLogs },
+    };
+  });
+}
+
+const { tag, logs } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title={`#${tag} - Tag`} description={`All logs tagged with #${tag}`}>
+  <div class="container-custom py-12">
+    <!-- Header -->
+    <div class="mb-8">
+      <a href={`${baseUrl}/tags/`} class="text-soft-indigo hover:text-sage transition text-sm font-medium mb-4 inline-block">
+        ← All Tags
+      </a>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="text-gradient">#{tag}</span>
+      </h1>
+      <p class="text-xl text-slate-300">
+        {logs.length} log{logs.length !== 1 ? 's' : ''} tagged with <strong>#{tag}</strong>
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-soft-indigo">{logs.length}</div>
+        <div class="text-sm text-slate-400">Total Logs</div>
+      </div>
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-sage">
+          {[...new Set(logs.map(l => l.data.quarter))].length}
+        </div>
+        <div class="text-sm text-slate-400">Quarters</div>
+      </div>
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-soft-indigo">
+          {[...new Set(logs.map(l => l.data.week))].length}
+        </div>
+        <div class="text-sm text-slate-400">Weeks</div>
+      </div>
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-sage">
+          {(logs.filter(l => l.data.executionScore).reduce((sum, l) => sum + (l.data.executionScore || 0), 0) / logs.filter(l => l.data.executionScore).length || 0).toFixed(1)}
+        </div>
+        <div class="text-sm text-slate-400">Avg Score</div>
+      </div>
+    </div>
+
+    <!-- Logs -->
+    <div class="space-y-6">
+      {logs.map(log => (
+        <LogCard
+          title={log.data.title}
+          date={log.data.date}
+          slug={log.slug}
+          tags={log.data.tags}
+          executionScore={log.data.executionScore}
+          excerpt={log.data.description}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

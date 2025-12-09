@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LogCard from '../../components/LogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all logs
+const allLogs = (await getCollection('logs')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+// Group logs by quarter and week
+const groupedLogs = allLogs.reduce((acc, log) => {
+  const key = `Q${log.data.quarter}-W${log.data.week}`;
+  if (!acc[key]) {
+    acc[key] = {
+      quarter: log.data.quarter,
+      week: log.data.week,
+      logs: []
+    };
+  }
+  acc[key].logs.push(log);
+  return acc;
+}, {} as Record<string, { quarter: number; week: number; logs: typeof allLogs }>);
+
+const sortedGroups = Object.values(groupedLogs).sort((a, b) => {
+  if (a.quarter !== b.quarter) return b.quarter - a.quarter;
+  return b.week - a.week;
+});
+---
+
+<BaseLayout title="Timeline - All Daily Logs" description="Complete timeline of all daily logs from my bug bounty journey">
+  <div class="container-custom py-12">
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Complete <span class="text-gradient">Timeline</span>
+      </h1>
+      <p class="text-xl text-slate-300">
+        Every daily log from my bug bounty journey, organized by quarter and week.
+      </p>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-soft-indigo">{allLogs.length}</div>
+        <div class="text-sm text-slate-400">Total Logs</div>
+      </div>
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-sage">{sortedGroups.length}</div>
+        <div class="text-sm text-slate-400">Weeks Tracked</div>
+      </div>
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-soft-indigo">
+          {allLogs.reduce((sum, log) => sum + log.data.tags.length, 0)}
+        </div>
+        <div class="text-sm text-slate-400">Total Tags</div>
+      </div>
+      <div class="card text-center py-4">
+        <div class="text-2xl font-bold text-sage">
+          {(allLogs.filter(l => l.data.executionScore !== undefined).reduce((sum, l) => sum + (l.data.executionScore || 0), 0) / allLogs.filter(l => l.data.executionScore !== undefined).length || 0).toFixed(1)}
+        </div>
+        <div class="text-sm text-slate-400">Avg Score</div>
+      </div>
+    </div>
+
+    <!-- Logs Timeline -->
+    {sortedGroups.length > 0 ? (
+      <div class="space-y-12">
+        {sortedGroups.map(group => (
+          <section>
+            <div class="flex items-center mb-6">
+              <div class="flex-shrink-0 w-32">
+                <div class="inline-block px-4 py-2 bg-gradient-to-r from-soft-indigo to-sage rounded-lg">
+                  <div class="text-sm font-bold text-white">
+                    Q{group.quarter} - Week {group.week}
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 h-px bg-slate-700 ml-4"></div>
+            </div>
+
+            <div class="space-y-6 ml-0 md:ml-36">
+              {group.logs.map(log => (
+                <LogCard
+                  title={log.data.title}
+                  date={log.data.date}
+                  slug={log.slug}
+                  tags={log.data.tags}
+                  executionScore={log.data.executionScore}
+                  excerpt={log.data.description}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    ) : (
+      <div class="card text-center py-16">
+        <p class="text-slate-400 text-lg">No logs yet. Start documenting your journey!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

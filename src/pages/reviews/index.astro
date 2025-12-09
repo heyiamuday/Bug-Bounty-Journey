@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all reviews
+const allReviews = (await getCollection('reviews')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+// Group by quarter
+const groupedByQuarter = allReviews.reduce((acc, review) => {
+  const quarter = review.data.quarter;
+  if (!acc[quarter]) {
+    acc[quarter] = [];
+  }
+  acc[quarter].push(review);
+  return acc;
+}, {} as Record<number, typeof allReviews>);
+
+const quarters = Object.keys(groupedByQuarter).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="Weekly Reviews" description="Comprehensive weekly reviews tracking progress, wins, and challenges">
+  <div class="container-custom py-12">
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Weekly <span class="text-gradient">Reviews</span>
+      </h1>
+      <p class="text-xl text-slate-300 max-w-3xl">
+        Every week, I reflect on wins, challenges, and plan for the next sprint. 
+        The 12 Week Year methodology demands accountability and continuous improvement.
+      </p>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-soft-indigo mb-2">{allReviews.length}</div>
+        <div class="text-slate-400">Weekly Reviews</div>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-sage mb-2">{quarters.length}</div>
+        <div class="text-slate-400">Quarters Tracked</div>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl font-bold text-soft-indigo mb-2">
+          {(allReviews.reduce((sum, r) => sum + r.data.weekProgress, 0) / allReviews.length || 0).toFixed(0)}%
+        </div>
+        <div class="text-slate-400">Avg Week Progress</div>
+      </div>
+    </div>
+
+    <!-- Reviews by Quarter -->
+    {quarters.length > 0 ? (
+      <div class="space-y-12">
+        {quarters.map(quarter => (
+          <section>
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <span class="text-gradient">Quarter {quarter}</span>
+              <span class="ml-4 text-lg text-slate-400 font-normal">
+                ({groupedByQuarter[Number(quarter)].length} reviews)
+              </span>
+            </h2>
+
+            <div class="space-y-6">
+              {groupedByQuarter[Number(quarter)].map(review => (
+                <ReviewCard
+                  title={review.data.title}
+                  date={review.data.date}
+                  slug={review.slug}
+                  quarter={review.data.quarter}
+                  week={review.data.week}
+                  weekProgress={review.data.weekProgress}
+                  wins={review.data.wins}
+                  challenges={review.data.challenges}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    ) : (
+      <div class="card text-center py-16">
+        <p class="text-slate-400 text-lg">No weekly reviews yet. The reflection begins soon!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
