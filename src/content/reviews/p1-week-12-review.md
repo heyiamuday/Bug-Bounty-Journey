@@ -1,23 +1,23 @@
 ---
 title: "Q1 Week 12 Review: Foundation Week"
-date: 2025-12-07
+date: 2025-12-01
 quarter: 1
 week: 12
 weekProgress: 85
 wins:
-  - "Set up complete testing environment"
-  - "Completed 20+ PortSwigger labs"
-  - "Created comprehensive note-taking system"
-  - "Joined HackerOne and Bugcrowd"
+  - Set up complete testing environment
+  - Completed 20+ PortSwigger labs
+  - Created comprehensive note-taking system
+  - Joined HackerOne and Bugcrowd
 challenges:
-  - "Time management - spent too long on setup"
-  - "Need to balance learning vs actual hunting"
-  - "Information overload from too many resources"
+  - Time management - spent too long on setup
+  - Need to balance learning vs actual hunting
+  - Information overload from too many resources
 nextWeekFocus:
-  - "Focus on XSS and CSRF vulnerabilities"
-  - "Submit first bug report (even if it's a duplicate)"
-  - "Limit learning to 2 hours, hunting to 3 hours daily"
-description: "First week reflection - building the foundation"
+  - Focus on XSS and CSRF vulnerabilities
+  - Submit first bug report (even if it's a duplicate)
+  - Limit learning to 2 hours, hunting to 3 hours daily
+description: First week reflection - building the foundation
 ---
 
 ## Week 12 Review: The Foundation
