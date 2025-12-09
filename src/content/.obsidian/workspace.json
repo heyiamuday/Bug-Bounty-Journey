@@ -1,28 +1,14 @@
 {
   "main": {
-    "id": "9d2249b7c6ae46e7",
+    "id": "0b4c116ca0b139bc",
     "type": "split",
     "children": [
       {
-        "id": "3efcd749ce251091",
+        "id": "e072b78888d456d9",
         "type": "tabs",
         "children": [
           {
-            "id": "6a57a74f6d87a04b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "reviews/KWM-week-12-review.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KWM-week-12-review"
-            }
-          },
-          {
-            "id": "8d3590b875eb24ee",
+            "id": "97f45060b5ba156f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,22 +21,21 @@
               "title": "p1-week-11-review"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "11c469792d4fc8d4",
+    "id": "bb5c9fab9eebb6a3",
     "type": "split",
     "children": [
       {
-        "id": "dd811171d9aaa504",
+        "id": "fd1f8f894220e65d",
         "type": "tabs",
         "children": [
           {
-            "id": "83830d8aaa7442ac",
+            "id": "8587430e827b5e34",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -63,7 +48,7 @@
             }
           },
           {
-            "id": "ae1b392016d89d9d",
+            "id": "042792a86e356496",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -80,7 +65,7 @@
             }
           },
           {
-            "id": "416e817e801e84ec",
+            "id": "043c9bb4fba958b8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -96,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "de07b33d79f90119",
+    "id": "4eccc8b7e223a5b6",
     "type": "split",
     "children": [
       {
-        "id": "71e2bb66871de3c5",
+        "id": "cc2bd549df5b4181",
         "type": "tabs",
         "children": [
           {
-            "id": "f370061c82daab2a",
+            "id": "55ea0d14a66487bf",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reviews/KWM-week-11-review.md",
+                "file": "reviews/p1-week-11-review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for KWM-week-11-review"
+              "title": "Backlinks for p1-week-11-review"
             }
           },
           {
-            "id": "dad802c74f11a49d",
+            "id": "132f412c105657b4",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reviews/KWM-week-11-review.md",
+                "file": "reviews/p1-week-11-review.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from KWM-week-11-review"
+              "title": "Outgoing links from p1-week-11-review"
             }
           },
           {
-            "id": "d08d86b677c763cb",
+            "id": "e8e3112b2a3f832b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -152,7 +137,7 @@
             }
           },
           {
-            "id": "eff45fa8e5e3d96b",
+            "id": "7e1aff6e8a0691ee",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -166,36 +151,26 @@
             }
           },
           {
-            "id": "582a9ca05704b162",
+            "id": "3bf77a248dd1766c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "reviews/KWM-week-11-review.md",
+                "file": "reviews/p1-week-11-review.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of KWM-week-11-review"
-            }
-          },
-          {
-            "id": "b787fb9bbf109111",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "Outline of p1-week-11-review"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -206,19 +181,11 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false,
-      "terminal:Open terminal": false
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "83830d8aaa7442ac",
+  "active": "97f45060b5ba156f",
   "lastOpenFiles": [
-    "logs/2025-12-02_W12_day-3.md",
-    "logs/2025-12-03_W12_day-3.md",
-    "logs/2025-12-08_W11_day-1.md",
-    "logs/2025-12-01_W12_day-1 copy.md",
-    "reviews/p1-week-11-review.md",
-    "reviews/p1-week-12-review.md",
-    "logs/2025-12-02_W12_day-2.md",
-    "logs/2025-12-01_W12_day-1.md"
+    "reviews/p1-week-12-review.md"
   ]
 }
