@@ -22,3 +22,5 @@ description: First week reflection - building the foundation
 This was **Week 11** of my first 12 Week Year cycle. The goal was simple: build a solid foundation for the journey ahead.
 Test 1
 Test 2
+
+
