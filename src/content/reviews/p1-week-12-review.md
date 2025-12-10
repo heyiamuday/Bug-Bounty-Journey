@@ -19,8 +19,7 @@ nextWeekFocus:
   - Limit learning to 2 hours, hunting to 3 hours daily
 description: First week reflection - building the foundation
 ---
-
-## Week 12 Review: The Foundation
+### Week 12 Review: The Foundation
 
 This was **Week 12** of my first 12 Week Year cycle. The goal was simple: build a solid foundation for the journey ahead.
 
