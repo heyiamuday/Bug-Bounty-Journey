@@ -24,6 +24,6 @@ This was **Week 11** of my first 12 Week Year cycle. The goal was simple: build 
 ###  Week's 11 Game Plan 📋
 For Week 11 (remember, we count down!), I'm shifting focus to **active execution**:
 1. **Primary Goal**: (Atleast 5hrs/day bughunting on Wed,Thr,Fri,sat,sun) 
-2. **Learning**: Focus exclusively on XSS and CSRF
-3. **Time Allocation**: Max 2 hours learning, minimum 3 hours hunting
-4. **Targets**: Pick 3 programs and go deep instead of wide
+2. **Learning**: Read 40 writeups goal
+3. **Time Allocation**: Max 4 hours learning, minimum 6 hours hunting
+4. **Targets**: Pick 1 programs and go deep instead of wide
